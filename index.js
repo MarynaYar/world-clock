@@ -51,3 +51,32 @@ select.addEventListener("change", function (event) {
       </div>`
   console.log(cityTime)
 })
+
+// Clock
+function updateClock() {
+  let now = moment();
+  let hour = now.hours();
+  let minute = now.minutes();
+  let second = now.seconds();
+
+  let handHour = document.querySelector('.hour-hand');
+  let hourDegrees = ((hour % 12) * 360) + (minute / 2) + 115;
+  handHour.style.transform = `translateX(-50%) rotate(${hourDegrees}deg)`;
+
+  let secondHand = document.querySelector('.second-hand')
+  let secondDegrees = (second / 60) * 360 + 360;
+  secondHand.style.transform = `translateX(-50%) rotate(${secondDegrees}deg)`;
+
+  let minuteHand = document.querySelector('.minute-hand')
+  let minuteDegrees = (minute / 60) * 360 + 363;
+  minuteHand.style.transform = `translateX(-50%) rotate(${minuteDegrees}deg)`;
+  if (second === 59) {
+    // Disable transition to avoid the spin effect
+    secondHand.style.transition = 'none';
+  }
+
+}
+
+setInterval(updateClock, 1000);
+
+updateClock();
