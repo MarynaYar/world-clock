@@ -29,3 +29,21 @@ setInterval(function () {
 
   newYorkTimeElement.innerHTML = `${newYorkZone.format("hh:mm:ss")} <small>${newYorkZone.format("A")}</small>`
 }, 1000)
+
+
+let select = document.querySelector("#select");
+select.addEventListener("change", function (event) {
+  let timeZone = event.target.value;
+  let cityTime = moment().tz(timeZone);
+  let cityMainElement = document.querySelector("#zurich")
+
+  let cityName = timeZone.split("/")[1];
+
+
+  cityMainElement.innerHTML = `<div class="main-city">
+        <h2>${cityName}</h2>
+        <div class="date">${cityTime.format("dddd, MMMM Do YYYY")}</div>
+        <div class="time">${cityTime.format("hh:mm:ss")}<small>${cityTime.format("A")}</small></div>
+      </div>`
+  console.log(cityTime)
+})
