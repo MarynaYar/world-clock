@@ -34,6 +34,10 @@ setInterval(function () {
 let select = document.querySelector("#select");
 select.addEventListener("change", function (event) {
   let timeZone = event.target.value;
+  if (timeZone === "current") {
+    timeZone = moment.tz.guess();
+  }
+
   let cityTime = moment().tz(timeZone);
   let cityMainElement = document.querySelector("#zurich")
 
