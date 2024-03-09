@@ -60,7 +60,7 @@ function updateClock() {
   let second = now.seconds();
 
   let handHour = document.querySelector('.hour-hand');
-  let hourDegrees = ((hour % 12) * 360) + (minute / 2) + 115;
+  let hourDegrees = ((hour % 12) / 12) * 360 + (minute / 60) * 30 + 360;
   handHour.style.transform = `translateX(-50%) rotate(${hourDegrees}deg)`;
 
   let secondHand = document.querySelector('.second-hand')
