@@ -1,5 +1,6 @@
 let clockIntervalId;
 let clockIntervalTime;
+let clockIntervalMainTime;
 function updateTimeCities() {
   clockIntervalId = setInterval(function () {
     // Zurich
@@ -10,7 +11,8 @@ function updateTimeCities() {
 
     zurichTimeElement.innerHTML = `${zurichZone.format("hh:mm:ss")} <small>${zurichZone.format("A")}</small>`
     zurichDateElement.innerHTML = zurichZone.format("dddd, MMMM Do YYYY");
-
+  }, 1000)
+  setInterval(function () {
     // London
     let londonElement = document.querySelector("#london");
     let londonTimeElement = londonElement.querySelector(".time");
@@ -62,11 +64,12 @@ function updateClock() {
 
 function updateMainCity(event) {
   clearInterval(clockIntervalId);
+  clearInterval(clockIntervalMainTime);
   let timeZone = event.target.value;
   if (timeZone === "current") {
     timeZone = moment.tz.guess();
   }
-  setInterval(function () {
+  clockIntervalMainTime = setInterval(function () {
     let cityTime = moment().tz(timeZone);
     let cityMainElement = document.querySelector("#zurich")
 
@@ -85,9 +88,11 @@ function updateMainCity(event) {
 };
 
 
-let select = document.querySelector("#select");
-select.addEventListener("change", updateMainCity);
+
 
 updateTimeCities();
 updateClock();
+
+let select = document.querySelector("#select");
+select.addEventListener("change", updateMainCity);
 
