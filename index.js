@@ -76,7 +76,7 @@ function updateMainCity(event) {
         <div class="zurich">
           <h2>${cityName}</h2>
           <div class="date">${cityTime.format("dddd, MMMM Do YYYY")}</div>
-          <div class="time">${cityTime.format("hh:mm:ss")}<small>${cityTime.format("A")}</small></div>
+          <div class="time">${cityTime.format("hh:mm:ss")} <small>${cityTime.format("A")}</small></div>
         </div>
  `
     console.log(timeZone)
