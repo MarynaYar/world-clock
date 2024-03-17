@@ -22,19 +22,41 @@ select {
 footer {
   font-family: monospace;
   text-align: center;
-  color: #282725;
+  color: #504A40;
+  font-size: 17px;
+  padding: 27px 0 10px;
+}
+
+footer p {
+  margin: 0px;
+}
+
+footer a {
+  color: #425a59;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.search-country {
+  display: flex;
+  justify-content: center;
 }
 
 .logo-clock {
   display: flex;
   justify-content: center;
   margin-top: 15px;
+  padding: 10px 0px 10px;
 }
 
 
 .world-clock h1 {
   margin-top: 14px;
   margin-bottom: 0px;
+  font-size: 45px;
 }
 
 .img-clock {
@@ -53,9 +75,19 @@ footer {
   font-family: 'Playfair Display', serif;
 }
 
+.zurich h2 {
+  font-size: 45px;
+  margin-bottom: 40px;
+  background: -webkit-linear-gradient(left, #2a3b4a, #6d6254, #907a60);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
 .container {
   background-color: rgba(192, 178, 151, 0.9);
-  max-width: 700px;
+  max-width: 1000px;
   margin: 70px auto;
   border-radius: 10px;
   box-shadow: 5px 5px 15px rgba(192, 178, 151, 0.9);
@@ -70,20 +102,26 @@ footer {
 .main-city {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   margin: 0 auto;
 }
 
 .other-cities {
   display: flex;
   flex-direction: column;
-  padding: 0px 60px;
-  margin: 0 auto;
+  justify-content: center;
+  padding-right: 50px;
   font-family: 'Playfair Display', serif;
-  color: #2d2923;
+  color: #4e473c;
 }
 
 .city {
   border-bottom: 1px dashed rgb(91, 80, 55);
+  padding: 10px;
+}
+
+.city h2 {
+  font-size: 25px;
 }
 
 .city:last-child {
@@ -91,12 +129,24 @@ footer {
 }
 
 .date {
-  color: #29251e;
+  color: rgb(31, 26, 20);
   opacity: 0.8;
+  font-size: 25px;
+  margin-bottom: 10px;
 }
 
 .time {
   color: #11100e;
+  font-size: 24px;
+}
+
+#zurich .time {
+  font-size: 35px;
+  color: #292724;
+}
+
+#zurich .time small {
+  font-size: 15px;
 }
 
 .time small {
@@ -112,6 +162,7 @@ footer {
   height: 300px;
   position: relative;
   width: 300px;
+  margin: 20px 10px;
 }
 
 clock-face:before {
@@ -126,6 +177,9 @@ clock-face:before {
   z-index: 1;
 }
 
+.main-container {
+  padding: 0px 15px 5px;
+}
 
 .number {
   font-family: 'Playfair Display', serif;
@@ -256,7 +310,7 @@ clock-face:before {
   justify-content: center;
   align-items: center;
   font-size: 17px;
-  margin-right: 12px;
+  margin-right: 21px;
 }
 
 @keyframes gradientAnimation {
