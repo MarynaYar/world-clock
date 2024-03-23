@@ -53,7 +53,7 @@ function updateClock() {
     secondHand.style.transform = `translateX(-50%) rotate(${secondDegrees}deg)`;
 
     let minuteHand = document.querySelector('.minute-hand')
-    let minuteDegrees = (minute / 60) * 360 + 362;
+    let minuteDegrees = (minute / 60) * 360 + 356;
     minuteHand.style.transform = `translateX(-50%) rotate(${minuteDegrees}deg)`;
     if (second === 59) {
       secondHand.style.transition = 'none';
